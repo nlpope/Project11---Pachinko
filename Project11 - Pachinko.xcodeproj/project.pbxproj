@@ -42,6 +42,7 @@
 		40203E132C9BEDCE006305EF /* slotGlowGood.png in Resources */ = {isa = PBXBuildFile; fileRef = 40203DF62C9BEDCC006305EF /* slotGlowGood.png */; };
 		40203E142C9BEDCE006305EF /* slotGlowGood@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40203DF72C9BEDCC006305EF /* slotGlowGood@2x.png */; };
 		40203E152C9BEDCE006305EF /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 40203DF82C9BEDCC006305EF /* spark.png */; };
+		408C0F512C9E0C0800F9A120 /* SKScene+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408C0F502C9E0C0800F9A120 /* SKScene+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,7 @@
 		40203DF62C9BEDCC006305EF /* slotGlowGood.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slotGlowGood.png; sourceTree = "<group>"; };
 		40203DF72C9BEDCC006305EF /* slotGlowGood@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slotGlowGood@2x.png"; sourceTree = "<group>"; };
 		40203DF82C9BEDCC006305EF /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		408C0F502C9E0C0800F9A120 /* SKScene+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKScene+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 			children = (
 				40203DA72C9BE665006305EF /* AppDelegate.swift */,
 				40203DA92C9BE666006305EF /* GameScene.sks */,
+				408C0F502C9E0C0800F9A120 /* SKScene+Ext.swift */,
 				40203DAD2C9BE666006305EF /* GameScene.swift */,
 				40203DAF2C9BE666006305EF /* GameViewController.swift */,
 				40203DB12C9BE666006305EF /* Main.storyboard */,
@@ -260,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				408C0F512C9E0C0800F9A120 /* SKScene+Ext.swift in Sources */,
 				40203DAE2C9BE666006305EF /* GameScene.swift in Sources */,
 				40203DB02C9BE666006305EF /* GameViewController.swift in Sources */,
 				40203DA82C9BE665006305EF /* AppDelegate.swift in Sources */,
