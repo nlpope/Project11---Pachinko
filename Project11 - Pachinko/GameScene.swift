@@ -17,6 +17,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
+    var ballCountLabel: SKLabelNode!
+    var ballCount = 5 {
+        didSet {
+            ballCountLabel.text = "Balls Remaining: \(ballCount)"
+        }
+    }
+    
     var editLabel: SKLabelNode!
     var editingMode: Bool = false {
         didSet { editLabel.text = editingMode ? "Done" : "Edit" }
@@ -42,15 +49,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         makeBouncer(at: CGPoint(x: 768, y: 0))
         makeBouncer(at: CGPoint(x: 1024, y: 0))
         
-        scoreLabel                          = SKLabelNode(fontNamed: "Chalkduster")
-        scoreLabel.text                     = "Score: 0"
-        scoreLabel.horizontalAlignmentMode  = .right
-        scoreLabel.position                 = CGPoint(x: 980, y: 700)
+        scoreLabel                              = SKLabelNode(fontNamed: "Chalkduster")
+        scoreLabel.text                         = "Score: 0"
+        scoreLabel.horizontalAlignmentMode      = .right
+        scoreLabel.position                     = CGPoint(x: 980, y: 700)
         addChild(scoreLabel)
         
-        editLabel                           = SKLabelNode(fontNamed: "Chalkduster")
-        editLabel.text                      = "Edit"
-        editLabel.position                  = CGPoint(x: 80, y: 700)
+        ballCountLabel                          = SKLabelNode(fontNamed: "Chalkduster")
+        ballCountLabel.text                     = "Balls Remaining: 5"
+        ballCountLabel.horizontalAlignmentMode  = .right
+        ballCountLabel.position                 = CGPoint(x: 980, y: 650)
+        addChild(ballCountLabel)
+        
+        editLabel                               = SKLabelNode(fontNamed: "Chalkduster")
+        editLabel.text                          = "Edit"
+        editLabel.position                      = CGPoint(x: 80, y: 700)
         addChild(editLabel)
     }
     
@@ -104,6 +117,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         box.position                = location
         box.physicsBody             = SKPhysicsBody(rectangleOf: box.size)
         box.physicsBody?.isDynamic  = false
+        box.name                    = "pin"
         
         addChild(box)
     }
@@ -111,14 +125,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func addBall(at location: CGPoint) {
         guard location.y >= 384 else { return }
+        guard ballCount != 0 else {
+            print("no more balls")
+            return
+        }
         
-        let ball                                = SKSpriteNode(imageNamed: "ballRed")
+        let balls                               = ["ballRed","ballPurple", "ballBlue", "ballCyan", "ballGreen", "ballGrey", "ballYellow"]
+        let ball                                = SKSpriteNode(imageNamed: balls.randomElement() ?? "ballRed")
         ball.name                               = "ball"
         ball.physicsBody                        = SKPhysicsBody(circleOfRadius: ball.size.width / 2.0)
         ball.physicsBody!.contactTestBitMask    = ball.physicsBody!.collisionBitMask
         ball.physicsBody?.restitution           = 0.6
         ball.position                           = location
         addChild(ball)
+        ballCount -= 1
     }
     
     
@@ -138,14 +158,26 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if object.name == "good" {
             destroy(ball: ball)
             score += 1
+            ballCount += 1
         } else if object.name == "bad" {
             destroy(ball: ball)
             score -= 1
+        } else if object.name == "pin" {
+            object.removeFromParent()
         }
     }
     
     
     func destroy(ball: SKNode) {
+//        if let fireParticles = SKEmitterNode(fileNamed: "FireParticles") {
+//            fireParticles.position = ball.position
+//            addChild(fireParticles)
+//        } 
+        if let magicParticles = SKEmitterNode(fileNamed: "MagicParticles") {
+            magicParticles.position = ball.position
+            addChild(magicParticles)
+        }
+        
         ball.removeFromParent()
     }
 }

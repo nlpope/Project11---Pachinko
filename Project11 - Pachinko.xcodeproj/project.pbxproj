@@ -43,6 +43,8 @@
 		40203E142C9BEDCE006305EF /* slotGlowGood@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 40203DF72C9BEDCC006305EF /* slotGlowGood@2x.png */; };
 		40203E152C9BEDCE006305EF /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 40203DF82C9BEDCC006305EF /* spark.png */; };
 		408C0F512C9E0C0800F9A120 /* SKScene+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408C0F502C9E0C0800F9A120 /* SKScene+Ext.swift */; };
+		408C0F542CA24C5E00F9A120 /* MagicParticles.sks in Resources */ = {isa = PBXBuildFile; fileRef = 408C0F522CA24C5D00F9A120 /* MagicParticles.sks */; };
+		408C0F552CA24C5E00F9A120 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 408C0F532CA24C5D00F9A120 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +85,8 @@
 		40203DF72C9BEDCC006305EF /* slotGlowGood@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slotGlowGood@2x.png"; sourceTree = "<group>"; };
 		40203DF82C9BEDCC006305EF /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		408C0F502C9E0C0800F9A120 /* SKScene+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKScene+Ext.swift"; sourceTree = "<group>"; };
+		408C0F522CA24C5D00F9A120 /* MagicParticles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MagicParticles.sks; sourceTree = "<group>"; };
+		408C0F532CA24C5D00F9A120 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +154,8 @@
 				40203DED2C9BEDCC006305EF /* bouncer.png */,
 				40203DEE2C9BEDCC006305EF /* bouncer@2x.png */,
 				40203DEF2C9BEDCC006305EF /* FireParticles.sks */,
+				408C0F522CA24C5D00F9A120 /* MagicParticles.sks */,
+				408C0F532CA24C5D00F9A120 /* Assets.xcassets */,
 				40203DF02C9BEDCC006305EF /* slotBaseBad.png */,
 				40203DF12C9BEDCC006305EF /* slotBaseBad@2x.png */,
 				40203DF22C9BEDCC006305EF /* slotBaseGood.png */,
@@ -234,6 +240,8 @@
 				40203E0D2C9BEDCD006305EF /* slotBaseBad.png in Resources */,
 				40203DFA2C9BEDCD006305EF /* background.jpg in Resources */,
 				40203E102C9BEDCE006305EF /* slotBaseGood@2x.png in Resources */,
+				408C0F542CA24C5E00F9A120 /* MagicParticles.sks in Resources */,
+				408C0F552CA24C5E00F9A120 /* Assets.xcassets in Resources */,
 				40203E0B2C9BEDCD006305EF /* bouncer@2x.png in Resources */,
 				40203E062C9BEDCD006305EF /* ballRed.png in Resources */,
 				40203E0C2C9BEDCD006305EF /* FireParticles.sks in Resources */,
