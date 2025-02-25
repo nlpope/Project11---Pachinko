@@ -112,7 +112,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func addBox(at location: CGPoint) {
         let size                    = CGSize(width: Int.random(in: 16...128), height: 16)
-        let box                     = SKSpriteNode(color: UIColor(red: randomFloat(low: 0, high: 1), green: randomFloat(low: 0, high: 1), blue: randomFloat(low: 0, high: 1), alpha: 1), size: size)
+        let box                     = SKSpriteNode(color: UIColor(red: randomFloat(low: 0, high: 1),
+                                                                  green: randomFloat(low: 0, high: 1),
+                                                                  blue: randomFloat(low: 0, high: 1),
+                                                                  alpha: 1),
+                                                   size: size)
         box.zRotation               = randomFloat(low: 0, high: 3)
         box.position                = location
         box.physicsBody             = SKPhysicsBody(rectangleOf: box.size)
